@@ -116,7 +116,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 @keyframes irisIn{from{opacity:0;transform:scale(.3);}to{opacity:1;transform:scale(1);}}
 .loader-text{color:#fff;font-family:'Plus Jakarta Sans',sans-serif;letter-spacing:.06em;font-size:.95rem;opacity:.9;}
 .loader-bar{width:160px;height:3px;border-radius:10px;background:rgba(255,255,255,.25);overflow:hidden;}
-.loader-bar span{display:block;height:100%;width:0%;background:var(--green);border-radius:10px;animation:loadBar 2.3s var(--ease) forwards;}
+.loader-bar span{display:block;height:100%;width:0%;background:var(--green);border-radius:10px;animation:loadBar 3s var(--ease) forwards;}
 @keyframes loadBar{to{width:100%;}}
 
 /* ============================================================
@@ -490,7 +490,7 @@ footer ul li a:hover{color:var(--green);}
 /* ===============================
    320px Mobile Fix
 =================================*/
-@media only screen and (max-width:320px){
+@media only screen and (max-width:360px){
 
     .navbar{
         height:70px;

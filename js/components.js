@@ -215,18 +215,15 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFloating();
   initLoader();
 });
-window.addEventListener("load", function () {
-    const loader = document.getElementById("site-loader");
-
-    // Show loader only once per browser tab
-    if (sessionStorage.getItem("loaderShown")) {
-        loader.style.display = "none";
-        return;
-    }
-
-    sessionStorage.setItem("loaderShown", "true");
+window.addEventListener('load', () => {
+    const loader = document.getElementById('site-loader');
 
     setTimeout(() => {
-        loader.classList.add("hide");
-    }, 2000);
+        loader.classList.add('hide');
+
+        setTimeout(() => {
+            loader.remove();
+        }, 700);
+
+    }, 3000);
 });
