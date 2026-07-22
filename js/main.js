@@ -212,12 +212,24 @@ document.addEventListener("DOMContentLoaded", () => {
   initForms();
   initPupilTracking();
 });
-window.addEventListener('load', () => {
-    const loader = document.getElementById('site-loader');
 
+window.addEventListener("load", function () {
+    const loader = document.getElementById("site-loader");
+
+    // Loader already shown in this browser tab
+    if (sessionStorage.getItem("loaderShown")) {
+        loader.remove();
+        return;
+    }
+
+    // Mark loader as shown
+    sessionStorage.setItem("loaderShown", "true");
+
+    // Show loader for 3 seconds
     setTimeout(() => {
-        loader.classList.add('hide');
+        loader.classList.add("hide");
 
+        // Remove after fade-out animation
         setTimeout(() => {
             loader.remove();
         }, 700);
