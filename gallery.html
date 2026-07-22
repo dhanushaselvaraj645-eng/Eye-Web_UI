@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Netra Vision Eye Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<main>
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Gallery</div>
+      <h1>Our Gallery</h1>
+      <p style="max-width:560px;margin:0 auto;">A look inside Netra Vision — our facilities, our team, and moments of care.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="doc-filters" data-aos="up">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="hospital">Hospital</button>
+        <button class="filter-chip" data-filter="ot">Operation Theatre</button>
+        <button class="filter-chip" data-filter="doctors">Doctors</button>
+        <button class="filter-chip" data-filter="checkup">Eye Check-up</button>
+        <button class="filter-chip" data-filter="events">Events</button>
+      </div>
+      <div class="grid grid-4" id="galleryGrid"></div>
+    </div>
+  </section>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-floating"></div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <img src="" alt="Gallery preview">
+</div>
+
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script>
+const galleryData = [
+  {cat:'hospital', label:'Hospital', img:'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=500&q=70'},
+  {cat:'ot', label:'Operation Theatre', img:'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=500&q=70'},
+  {cat:'doctors', label:'Doctors', img:'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=70'},
+  {cat:'checkup', label:'Eye Check-up', img:'https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=500&q=70'},
+  {cat:'events', label:'Events', img:'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=500&q=70'},
+  {cat:'hospital', label:'Hospital', img:'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=500&q=70'},
+  {cat:'ot', label:'Operation Theatre', img:'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=500&q=70'},
+  {cat:'doctors', label:'Doctors', img:'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=500&q=70'},
+  {cat:'checkup', label:'Eye Check-up', img:'https://th.bing.com/th/id/OIP.49Y2W5Nik1295R1D0MFQOQHaE8?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3'},
+  {cat:'events', label:'Events', img:'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=500&q=70'},
+  {cat:'hospital', label:'Hospital', img:'https://th.bing.com/th/id/OIP.M-6mKtlJaj2Qor24hHs9pgHaDt?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3'},
+  {cat:'doctors', label:'Doctors', img:'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=70'},
+];
+document.getElementById('galleryGrid').innerHTML = galleryData.map(g=>`
+  <div class="gallery-item" data-aos="zoom" data-cat="${g.cat}" data-label="${g.label}">
+    <img src="${g.img}" alt="${g.label} at Netra Vision Eye Hospital">
+  </div>`).join('');
+</script>
+</body>
+</html>

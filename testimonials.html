@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — Netra Vision Eye Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app-header"></div>
+
+<main>
+  <section class="page-banner">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Testimonials</div>
+      <h1>Patient Testimonials</h1>
+      <p style="max-width:560px;margin:0 auto;">Real stories from patients who trusted us with their vision.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="position:relative" data-aos="zoom">
+        <button class="t-arrow prev" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="t-slider"><div class="t-track" id="mainTestimonialTrack"></div></div>
+        <button class="t-arrow next" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></button>
+        <div class="t-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--white)">
+    <div class="container">
+      <div class="section-head" data-aos="up"><h2>More Patient Reviews</h2></div>
+      <div class="grid grid-3" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-banner" data-aos="zoom">
+        <div><h2>Join thousands of happy patients</h2><p>Book your consultation and experience the Netra Vision difference.</p></div>
+        <div class="cta-actions"><a href="appointment.html" class="btn btn-accent">Book Appointment</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="app-footer"></div>
+<div id="app-floating"></div>
+<script src="js/components.js"></script>
+<script src="js/main.js"></script>
+<script>
+const allTestimonials = [
+  {img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80', name:'Meera S.', role:'Cataract Patient', quote:'My cataract surgery was quick and painless. I can read without glasses for the first time in 10 years!'},
+  {img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80', name:'Arun K.', role:'LASIK Patient', quote:'The team explained every step clearly. Recovery was faster than I expected — highly recommend Netra Vision.'},
+  {img:'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=100&q=80', name:'Lakshmi P.', role:'Parent of Pediatric Patient', quote:'The pediatric eye team made my daughter feel so comfortable. Truly caring doctors and staff.'},
+  {img:'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=100&q=80', name:'Ramesh V.', role:'Glaucoma Patient', quote:'Regular check-ups here caught my glaucoma early. Grateful for their thorough screening process.'},
+  {img:'https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?auto=format&fit=crop&w=100&q=80', name:'Divya R.', role:'Retina Surgery Patient', quote:'Excellent retina surgery team. They kept my family informed throughout the entire procedure.'},
+  {img:'https://images.unsplash.com/photo-1607990283143-e81e7a2c9349?auto=format&fit=crop&w=100&q=80', name:'Suresh N.', role:'Dry Eye Patient', quote:'Years of dry eye discomfort finally addressed with a treatment plan that actually works.'},
+];
+document.getElementById('mainTestimonialTrack').innerHTML = allTestimonials.slice(0,3).map(t=>`
+  <div class="t-slide"><div class="t-card">
+    <div class="t-stars">★★★★★</div><p class="t-quote">"${t.quote}"</p>
+    <div class="t-person"><img src="${t.img}" alt="${t.name}"><div><b>${t.name}</b><span>${t.role}</span></div></div>
+  </div></div>`).join('');
+document.getElementById('testimonialGrid').innerHTML = allTestimonials.map(t=>`
+  <div class="card" data-aos="up">
+    <div class="t-stars" style="margin-bottom:12px;">★★★★★</div>
+    <p style="font-style:italic;margin-bottom:18px;">"${t.quote}"</p>
+    <div class="t-person" style="justify-content:flex-start;"><img src="${t.img}" alt="${t.name}"><div><b>${t.name}</b><span>${t.role}</span></div></div>
+  </div>`).join('');
+</script>
+</body>
+</html>
